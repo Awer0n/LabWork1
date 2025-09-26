@@ -1,0 +1,36 @@
+// Задача 2
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+    public static void main(String[] args) {
+        char[] original = {'a', '1', 'b', '2', 'c', '3'}; 
+        List<Character> letters = new ArrayList<>();
+        List<Character> numbers = new ArrayList<>();
+
+        // Разделение символов на буквы и цифры
+        for (char c : original) {
+            if (Character.isLetter(c)) {
+                letters.add(c);
+            } else if (Character.isDigit(c)) {
+                numbers.add(c);
+            }
+        }
+
+        // Вывод букв
+        for (char c : letters) {
+            System.out.print(c);
+        }
+        System.out.println();
+
+        // Очистка массива (не обязательно, но по вашему примеру)
+        original = null;
+        System.gc(); // Вызов сборщика мусора (не гарантированно, но по примеру)
+
+        // Вывод цифр
+        for (char c : numbers) {
+            System.out.print(c);
+        }
+        System.out.println();
+    }
+}

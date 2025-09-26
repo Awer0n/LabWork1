@@ -1,0 +1,33 @@
+#include <iostream>
+#include <vector>
+#include <cctype>  // ��� �������� �������� �� �������������� � �������� � ������
+using namespace std;
+
+void printVector(const vector<char>& v, const string& label) {
+    cout << label;
+    for (char c : v) {
+        cout << c;
+    }
+    cout << endl;
+}
+
+int main() {
+    vector<char> original = { 'a', '1', 'b', '2', 'c', '3' }; // ��������� ����� ��������
+    vector<char> letters; // ������ ��������� ��������
+    vector<char> numbers; // ������ �������� ��������
+
+    for (char c : original) {
+        if (isalpha(c)) {
+            letters.push_back(c);
+        } else if (isdigit(c)) {
+            numbers.push_back(c);
+        }
+    }
+
+    original.clear(); // ������� ��������� �������
+
+    printVector(letters, "Letters: ");
+    printVector(numbers, "Numbers: ");
+
+    return 0;
+}

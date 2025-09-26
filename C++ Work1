@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+void printEvenIndexedChars(const string& s) {
+    cout << "Even indices: ";
+    for (int i = 0; i < s.length(); i += 2) {
+        cout << s[i];
+    }
+    cout << endl;
+}
+
+void printOddIndexedChars(const string& s) {
+    cout << "Odd indices: ";
+    for (int i = 1; i < s.length(); i += 2) {
+        cout << s[i];
+    }
+    cout << endl;
+}
+
+int main() {
+    string str = "AaBbCcDd"; // �������� ������
+
+    printEvenIndexedChars(str);
+    printOddIndexedChars(str);
+
+    return 0;
+}
